@@ -42,13 +42,13 @@
               </router-link>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <router-link to="/login">
                 <i class="fas fa-cog"></i>
               </router-link>
             </a>
-          </li>
+          </li>-->
         </ul>
       </div>
     </nav>
@@ -91,6 +91,8 @@
         a {
           text-decoration: none;
           color: rgb(211, 151, 59);
+          border: 20px solid transparent;
+          background-clip: padding-box;
 
           &:hover {
             color: #3e5214;

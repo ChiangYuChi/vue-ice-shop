@@ -1,8 +1,8 @@
 <!-- 購物車 -->
 <template>
-  <div>
+  <div @click.prevent="openBox = !openBox">
     <div class="basketIcon">
-      <div class="basketButton" @click.prevent="openBox = !openBox">
+      <div class="basketButton">
         <i class="fas fa-cart-plus"></i>
       </div>
       <div class="basketList" v-show="openBox">
@@ -145,6 +145,10 @@ export default {
   position: fixed;
   bottom: 3%;
   right: 1%;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   .fa-cart-plus {
     font-size: 30px;

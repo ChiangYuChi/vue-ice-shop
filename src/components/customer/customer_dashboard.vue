@@ -1,12 +1,11 @@
 <!-- 共用模版 -->
 <template>
   <div>
-    <CustomerNavbar></CustomerNavbar>
     <div class="main">
+      <CustomerNavbar></CustomerNavbar>
       <router-view></router-view>
+      <CustomerFooter></CustomerFooter>
     </div>
-
-    <CustomerFooter></CustomerFooter>
   </div>
 </template>
 <script>
@@ -22,7 +21,11 @@ export default {
 </script>
 
 <style lang="scss">
-main {
+.main {
   width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>

@@ -2,8 +2,8 @@
   <!-- https://codepen.io/nuel/pen/grgyqv -->
   <div>
     <div class="shippingDetail">
-      <h5>請確認購買清單與填寫資料</h5>
-      <div class="shipping">
+      <h5 v-if="cart.carts.length !==0">請確認購買清單與填寫資料</h5>
+      <div class="shipping" v-if="cart.carts.length !==0">
         <h6>付款人資訊</h6>
         <form action="#" @submit.prevent="createOrder">
           <div class="form-group">
@@ -60,9 +60,9 @@
           </div>
         </form>
       </div>
-      <div class="basketList">
+      <div class="basketList" v-if="cart.carts.length !==0">
         <h6>購買清單</h6>
-        <table class="table table-sm" v-if="cart.carts.length !==0">
+        <table class="table table-sm">
           <thead>
             <th></th>
             <th>品名</th>
@@ -106,14 +106,10 @@
             <button class="btn btn-outline-secondary" type="button" @click="addCouponCode">套用優惠碼</button>
           </div>
         </div>
+      </div>
 
-        <div class="emptyCartText">
-          <router-link
-            v-if="cart.carts.length ==0"
-            to="/"
-            class="d-block btn btn-sm bg-danger text-light"
-          >購物車空了 返回商品列表</router-link>
-        </div>
+      <div class="emptyCartText" v-if="cart.carts.length ==0">
+        <router-link to="/" class="d-block btn btn-sm bg-danger text-light">購物車空了 返回商品列表</router-link>
       </div>
     </div>
   </div>
@@ -205,6 +201,7 @@ export default {
   font-size: 16px;
   display: flex;
   justify-content: center;
+
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 15px;
@@ -284,6 +281,10 @@ export default {
         font-size: 1.3rem;
       }
     }
+  }
+
+  .emptyCartText {
+    margin: 0 auto 0;
   }
 }
 </style>

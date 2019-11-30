@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="customerProduct">
     <loading :active.sync="isLoading"></loading>
     <div class="container">
       <nav aria-label="breadcrumb">
@@ -37,9 +37,8 @@
           </div>
           <div class="row mt-4">
             <div class="col-md-6">
-              <select class="form-control" name="qty" v-model="product.num">
-                <option selected>-請選擇數量-</option>
-                <option v-for="num in 10" :value="num" :key="num">選購 {{ num }} 件 {{ product.unit }}</option>
+              <select class="form-control" name="qty" v-model="quantity">
+                <option :value="num" v-for="num in 10" :key="num">選購{{num}}件</option>
               </select>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
@@ -67,7 +66,7 @@ export default {
     return {
       id: this.$route.params.id,
       product: {},
-      quantity: "",
+      quantity: 1,
       productId: "",
       isLoading: false,
       cart: {},
@@ -124,33 +123,42 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.productDetail {
-  h5 {
-    font-size: 20px;
-  }
-  .productContent {
-    width: 100%;
-    height: 300px;
-    box-shadow: 0px 0px 20px 2.5px rgba(85, 189, 91, 0.5);
-    margin: 40px 0 30px 0;
-    display: flex;
-    justify-content: space-around;
-
-    .productDescription {
-      width: 60%;
-      height: 300px;
-      border: 1px solid red;
-    }
-    .productCarousel {
-      width: 30%;
-      height: 300px;
-      border: 1px solid red;
-    }
-
-    h5 {
-      font-size: 30px;
-      color: black;
-    }
-  }
+.customerProduct {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+// .productDetail {
+//   h5 {
+//     font-size: 20px;
+//   }
+//   .productContent {
+//     width: 100%;
+//     border: 1px solid red;
+//     box-shadow: 0px 0px 20px 2.5px rgba(85, 189, 91, 0.5);
+//     margin: 40px 0 30px 0;
+//     display: flex;
+//     justify-content: space-around;
+
+//     .productDescription {
+//       width: 60%;
+//       height: 300px;
+//       border: 1px solid red;
+//     }
+//     .productCarousel {
+//       width: 30%;
+//       height: 300px;
+//       border: 1px solid red;
+//     }
+
+//     h5 {
+//       font-size: 30px;
+//       color: black;
+//     }
+//   }
+// }
 </style>

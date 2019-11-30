@@ -7,16 +7,6 @@
     <div class="mainIndex">
       <Sidebar></Sidebar>
       <div class="mainContent">
-        <div class="aboutUs">
-          <h2>關於麥好冰</h2>
-          <div class="descripton">
-            <p>麥好冰成立於2019，是為了消費者的食品安全及友善農業而誕生的品牌。</p>
-            <p>購買與食用新鮮、在地、當季的台灣水果及生鮮蔬果與作物，對環境環保，對人體養身。過早或過晚出現在市場的生鮮蔬果都不適宜人們食用。台灣水果成長於適當的氣候土壤，吸飽天地精華</p>
-
-            <p>麥好冰的創辦人麥好多出生於風光明媚的東海岸，深愛家鄉豐饒的土地上生產的甜美水果。為了使農民的經濟、就業更獲得保障，也為了替消費者嚴格把關，因此把友善耕作納入管理，堅持使用100%台灣新鮮水果、手作無添加高品質冰棒。愛護農民並關懷消費者權益。</p>
-          </div>
-        </div>
-
         <h3>
           來喫冰
           <span>Online Shop</span>
@@ -36,7 +26,7 @@
                     <div class="card-body">
                       <span class="badge badge-secondary float-right ml-2">{{item.category}}</span>
                       <h5 class="card-title font-weight-normal">
-                        <a href="#" class="text-dark">{{ item.title }}</a>
+                        <a href="#" class="text-dark" @click="getProduct(item.id)">{{ item.title }}</a>
                       </h5>
                       <hr />
                       <p class="card-text text-dark">{{ item.content }}</p>
@@ -70,6 +60,15 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="aboutUs">
+          <h2>關於麥好冰</h2>
+          <div class="descripton">
+            <p>麥好冰成立於2019，是為了消費者的食品安全及友善農業而誕生的品牌。</p>
+            <p>購買與食用新鮮、在地、當季的台灣水果及生鮮蔬果與作物，對環境環保，對人體養身。過早或過晚出現在市場的生鮮蔬果都不適宜人們食用。台灣水果成長於適當的氣候土壤，吸飽天地精華</p>
+
+            <p>麥好冰的創辦人麥好多出生於風光明媚的東海岸，深愛家鄉豐饒的土地上生產的甜美水果。為了使農民的經濟、就業更獲得保障，也為了替消費者嚴格把關，因此把友善耕作納入管理，堅持使用100%台灣新鮮水果、手作無添加高品質冰棒。愛護農民並關懷消費者權益。</p>
           </div>
         </div>
       </div>
